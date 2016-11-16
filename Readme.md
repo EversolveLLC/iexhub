@@ -25,7 +25,7 @@ In order to configure commons logging with Tomcat use the following runtime argu
 ```sh
 -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger 
 ```
--- To set "debug" level: 
+- To set "debug" level: 
 ```sh
 -Dlog4j.debug
 ```
