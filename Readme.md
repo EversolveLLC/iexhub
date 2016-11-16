@@ -1,11 +1,12 @@
-# ReadMe for Information Exchange Hub (IexHub)
+# ReadMe for Information Exchange Hub (IExHub)
 
 
 
 ##Release Notes
 
 ###HIMSS 2016 Demo
- Release for HIMSS 2016 Demo
+ Release for HIMSS 2016 includes support for IHE PIX, PDQ, ATNA, Constant Time.
+ 
 ##NA-Connectathon-2016 
 North American Connectathon
 
