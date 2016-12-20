@@ -1,9 +1,10 @@
 package org.iexhub.services.dto;
 
 /**
- * Created by tomson.ngassa on 7/20/2016.
+ * Used by  org.iexhub.services.GetPatientDataService 
+ * Created by tomson.ngassa on 7/11/2016.
  */
-
+@Deprecated
 public class ClinicalDocumentResponse {
     private boolean published;
 
