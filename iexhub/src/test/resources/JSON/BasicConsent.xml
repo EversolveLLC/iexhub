@@ -1,0 +1,188 @@
+<Contract xmlns="http://hl7.org/fhir">
+   <id value="basic-opt-in"/>
+   <meta>
+      <versionId value="1"/>
+      <lastUpdated value="2018-04-19T03:04:11.619+00:00"/>
+   </meta>
+   <contained>
+      <Organization xmlns="http://hl7.org/fhir">
+         <id value="sourceOrgOID"/>
+         <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="NPI of source organization"/>
+         </identifier>
+         <name value="Provider Organization Name"/>
+         <address>
+            <line value="1 Main Street"/>
+            <city value="Cupertino"/>
+            <state value="CA"/>
+            <postalCode value="95014"/>
+         </address>
+         <contact>
+            <name>
+               <family value="Contact Family Name"/>
+               <given value="Contact Given Name"/>
+            </name>
+            <telecom>
+               <system value="phone"/>
+               <value value="408-555-1212"/>
+               <use value="work"/>
+            </telecom>
+            <telecom>
+               <system value="email"/>
+               <value value="contact@sourceorgnization.org"/>
+               <use value="work"/>
+            </telecom>
+         </contact>
+      </Organization>
+   </contained>
+   <contained>
+      <Patient xmlns="http://hl7.org/fhir">
+         <id value="ffc486eff2b04b8"/>
+         <identifier>
+            <system value="http://www.acme.hospital/identifier/patient"/>
+            <value value="ffc486eff2b04b8"/>
+         </identifier>
+         <identifier>
+            <system value="http://hl7.org/fhir/sid/us-ssn"/>
+            <value value="123-45-6789"/>
+         </identifier>
+         <name>
+            <family value="Patient Family Name"/>
+            <given value="Patient Given Name"/>
+         </name>
+         <telecom>
+            <system value="phone"/>
+            <value value="555-1212"/>
+            <use value="home"/>
+         </telecom>
+         <telecom>
+            <system value="email"/>
+            <value value="patient@home.org"/>
+            <use value="home"/>
+         </telecom>
+         <gender value="female"/>
+         <birthDate value="1966-10-22"/>
+         <address>
+            <type value="postal"/>
+            <line value="Patient Address Line"/>
+            <city value="City"/>
+            <state value="NY"/>
+            <postalCode value="12345"/>
+         </address>
+         <careProvider>
+            <reference value="#sourceOrgOID"/>
+         </careProvider>
+      </Patient>
+   </contained>
+   <contained>
+      <Practitioner xmlns="http://hl7.org/fhir">
+         <id value="sourcePractitionerNPI"/>
+         <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="NPI"/>
+         </identifier>
+         <name>
+            <family value="Source Practitioner Last Name"/>
+            <given value="Source Practitioner Given Name"/>
+            <suffix value="MD"/>
+         </name>
+         <telecom>
+            <system value="phone"/>
+            <value value="212-555-1212"/>
+         </telecom>
+         <telecom>
+            <system value="email"/>
+            <value value="contact@sourceorgnization.org"/>
+            <use value="work"/>
+         </telecom>
+         <address>
+            <line value="Source Practitioner Address Line"/>
+            <city value="City"/>
+            <state value="NY"/>
+            <postalCode value="98765"/>
+         </address>
+      </Practitioner>
+   </contained>
+   <contained>
+      <Practitioner xmlns="http://hl7.org/fhir">
+         <id value="recipientPractitionerNPI"/>
+         <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="NPI"/>
+         </identifier>
+         <name>
+            <family value="Recipient Practitioner Last Name"/>
+            <given value="Recipient Practitioner Given Name"/>
+            <prefix value="Ms."/>
+            <suffix value="MD"/>
+         </name>
+         <telecom>
+            <system value="phone"/>
+            <value value="212-000-1212"/>
+            <use value="work"/>
+         </telecom>
+         <telecom>
+            <system value="email"/>
+            <value value="recipient@destination.org"/>
+            <use value="work"/>
+         </telecom>
+         <address>
+            <line value="Recipient Practitioner Address Line"/>
+            <city value="City"/>
+            <state value="NY"/>
+            <postalCode value="98765"/>
+         </address>
+      </Practitioner>
+   </contained>
+   <identifier>
+      <system value="urn:oid:2.16.840.1.113883.3.72.5.9.1"/>
+      <value value="123456789"/>
+   </identifier>
+   <issued value="2016-06-05T17:34:53-04:00"/>
+   <subject>
+      <reference value="#ffc486eff2b04b8"/>
+   </subject>
+   <authority>
+      <reference value="#sourceOrgOID"/>
+   </authority>
+   <type>
+      <coding>
+         <system value="http://hl7.org/fhir/contracttypecodes"/>
+         <code value="disclosure"/>
+      </coding>
+   </type>
+   <actionReason>
+      <coding>
+         <system value="http://hl7.org/fhir/v3/ActReason"/>
+         <code value="TREAT"/>
+      </coding>
+   </actionReason>
+   <actor>
+      <entity>
+         <reference value="#sourcePractitionerNPI"/>
+      </entity>
+   </actor>
+   <signer>
+      <type>
+         <system value="http://hl7.org/fhir/contractsignertypecodes"/>
+         <code value="1.2.840.10065.1.12.1.7"/>
+      </type>
+      <party>
+         <reference value="#ffc486eff2b04b8"/>
+      </party>
+      <signature value="Patient Given Name Patient Family Name"/>
+   </signer>
+   <term>
+      <applies>
+         <start value="2015-10-10"/>
+         <end value="2016-10-10"/>
+      </applies>
+      <actor>
+         <entity>
+            <reference value="#recipientPractitionerNPI"/>
+         </entity>
+      </actor>
+      <text value="intended recipient organization without sensitive data elements"/>
+   </term>
+</Contract>

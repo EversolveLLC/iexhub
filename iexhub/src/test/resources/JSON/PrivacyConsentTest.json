@@ -1,98 +1,20 @@
 
 {
     "resourceType":"Contract",
-    "id":"2.16.840.1.113883.3.72.5.9.1.consentId",
+    "id":"privacy-consent-with-attachment",
+	"meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/consent-as-contract"
+    ]
+	},
     "contained":[
-        {
-            "resourceType":"Organization",
-            "id":"sourceOrgOID",
-            "identifier":[
-                {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
-                    "value":"NPI of source organization"
-                }
-            ],
-            "name":"Source Organization Name",
-            "address":[
-                {
-                    "line":[
-                        "1 Source Drive"
-                    ],
-                    "city":"Source City",
-                    "state":"NY",
-                    "postalCode":"01221"
-                }
-            ],
-            "contact":[
-                {
-                    "name":{
-                        "family":[
-                            "Contact Family Name"
-                        ],
-                        "given":[
-                            "Contact Given Name"
-                        ]
-                    },
-                    "telecom":[
-                        {
-                            "system":"phone",
-                            "value":"408-555-1212",
-                            "use":"work"
-                        },
-                        {
-                            "system":"email",
-                            "value":"contact@sourceorgnization.org",
-                            "use":"work"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "resourceType":"Basic",
-            "id":"item1",
-            "code":{
-                "coding":[
-                    {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
-                        "code":"SDV"
-                    }
-                ],
-                "text":"Sexual and domestic violence related"
-            }
-        },
-        {
-            "resourceType":"Basic",
-            "id":"item2",
-            "code":{
-                "coding":[
-                    {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
-                        "code":"PSY"
-                    }
-                ],
-                "text":"Psychiatry Related Data"
-            }
-        },
-        {
-            "resourceType":"Basic",
-            "id":"item3",
-            "code":{
-                "coding":[
-                    {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
-                        "code":"ETH"
-                    }
-                ],
-                "text":"Substance Abuse Related Data"
-            }
-        },
+        
         {
             "resourceType":"Patient",
             "id":"patientId",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.1",
+                    "system":"http://hl7.org/fhir/sid/us-ssn",
                     "value":"123-45-6789"
                 },
                 {
@@ -146,7 +68,7 @@
             "id":"sourceOrgOID",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI of source organization"
                 }
             ],
@@ -191,7 +113,7 @@
             "id":"sourcePractitionerNPI",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI of source provider"
                 }
             ],
@@ -250,10 +172,8 @@
                     }
                 },
                 {
-                    "deleted":false,
-                    "item":{
-                        "reference":"#item2",
-                        "display":"referenced document type or instance"
+                      "item":{
+                        "reference":"#item2"
                     }
                 },
                 {
@@ -269,7 +189,7 @@
             "code":{
                 "coding":[
                     {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
+                        "system":"http://hl7.org/fhir/v3/ActCode",
                         "code":"SDV"
                     }
                 ],
@@ -282,7 +202,7 @@
             "code":{
                 "coding":[
                     {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
+                        "system":"http://hl7.org/fhir/v3/ActCode",
                         "code":"PSY"
                     }
                 ],
@@ -295,7 +215,7 @@
             "code":{
                 "coding":[
                     {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
+                        "system":"http://hl7.org/fhir/v3/ActCode",
                         "code":"ETH"
                     }
                 ],
@@ -307,7 +227,7 @@
             "id":"recipientPractitionerNPI",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI of recipient provider"
                 }
             ],
@@ -376,7 +296,7 @@
         {
             "coding":[
                 {
-                    "system":"http://hl7.org/fhir/contractsubtypecodes",
+                    "system":"http://hl7.org/fhir/v3/ActReason",
                     "code":"TREAT"
                 }
             ]

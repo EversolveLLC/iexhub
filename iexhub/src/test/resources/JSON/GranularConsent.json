@@ -4,61 +4,16 @@
     "id":"2.16.840.1.113883.3.72.5.9.1.consentId",
     "contained":[
         {
-            "resourceType":"Organization",
-            "id":"sourceOrgOID",
-            "identifier":[
-                {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
-                    "value":"NPI of source organization"
-                }
-            ],
-            "name":"Provider Organization Name",
-            "address":[
-                {
-                    "line":[
-                        "1 Main Street"
-                    ],
-                    "city":"Cupertino",
-                    "state":"CA",
-                    "postalCode":"95014"
-                }
-            ],
-            "contact":[
-                {
-                    "name":{
-                        "family":[
-                            "Contact Family Name"
-                        ],
-                        "given":[
-                            "Contact Given Name"
-                        ]
-                    },
-                    "telecom":[
-                        {
-                            "system":"phone",
-                            "value":"408-555-1212",
-                            "use":"work"
-                        },
-                        {
-                            "system":"email",
-                            "value":"contact@sourceorgnization.org",
-                            "use":"work"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "resourceType":"Basic",
             "id":"item1",
             "code":{
                 "coding":[
                     {
-                        "system":"urn:oid:2.16.840.1.113883.6.1",
-                        "code":"18842-5"
+                        "system":"http://hl7.org/fhir/v3/ActCode",
+                        "code":"SDV"
                     }
                 ],
-                "text":"Discharge Summary"
+                "text":"Sexual and domestic violence related sensitivity"
             }
         },
         {
@@ -67,11 +22,11 @@
             "code":{
                 "coding":[
                     {
-                        "system":"urn:oid:2.16.840.1.113883.6.1",
-                        "code":"34133-9"
+                        "system":"http://hl7.org/fhir/v3/ActCode",
+                        "code":"HIV"
                     }
                 ],
-                "text":"Summarization of Episode Note"
+                "text":"HIV/AIDS related sensitivity"
             }
         },
         {
@@ -80,11 +35,11 @@
             "code":{
                 "coding":[
                     {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
+                        "system":"http://hl7.org/fhir/v3/ActCode",
                         "code":"ETH"
                     }
                 ],
-                "text":"Substance Abuse Related Data"
+                "text":"Substance Use Disorder related sensitivity"
             }
         },
         {
@@ -92,7 +47,7 @@
             "id":"patientId",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.1",
+                    "system":"urn:oid:http://hl7.org/fhir/sid/us-ssn",
                     "value":"123-45-6789"
                 },
                 {
@@ -146,7 +101,7 @@
             "id":"sourceOrgOID",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI of source organization"
                 }
             ],
@@ -191,7 +146,7 @@
             "id":"sourcePractitionerNPI",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI"
                 }
             ],
@@ -245,45 +200,17 @@
             "mode":"snapshot",
             "entry":[
                 {
-                    "flag":{
-                        "coding":[
-                            {
-                                "system":"urn:oid:2.16.840.1.113883.6.1",
-                                "code":"18842-5"
-                            }
-                        ],
-                        "text":"Discharge Summary"
-                    },
+                   
                     "item":{
                         "reference":"#item1"
                     }
                 },
                 {
-                    "flag":{
-                        "coding":[
-                            {
-                                "system":"urn:oid:2.16.840.1.113883.6.1",
-                                "code":"34133-9"
-                            }
-                        ],
-                        "text":"Summarization of Episode Note"
-                    },
-                    "deleted":false,
-                    "item":{
-                        "reference":"#item2",
-                        "display":"referenced document type or instance"
+                      "item":{
+                        "reference":"#item2"
                     }
                 },
                 {
-                    "flag":{
-                        "coding":[
-                            {
-                                "system":"urn:oid:2.16.840.1.113883.5.25",
-                                "code":"ETH"
-                            }
-                        ],
-                        "text":"Substance Abuse Related Data"
-                    },
                     "item":{
                         "reference":"#item3"
                     }
@@ -291,50 +218,11 @@
             ]
         },
         {
-            "resourceType":"Basic",
-            "id":"item1",
-            "code":{
-                "coding":[
-                    {
-                        "system":"urn:oid:2.16.840.1.113883.6.1",
-                        "code":"18842-5"
-                    }
-                ],
-                "text":"Discharge Summary"
-            }
-        },
-        {
-            "resourceType":"Basic",
-            "id":"item2",
-            "code":{
-                "coding":[
-                    {
-                        "system":"urn:oid:2.16.840.1.113883.6.1",
-                        "code":"34133-9"
-                    }
-                ],
-                "text":"Summarization of Episode Note"
-            }
-        },
-        {
-            "resourceType":"Basic",
-            "id":"item3",
-            "code":{
-                "coding":[
-                    {
-                        "system":"urn:oid:2.16.840.1.113883.5.25",
-                        "code":"ETH"
-                    }
-                ],
-                "text":"Substance Abuse Related Data"
-            }
-        },
-        {
             "resourceType":"Practitioner",
             "id":"recipientPractitionerNPI",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI"
                 }
             ],
@@ -403,7 +291,7 @@
         {
             "coding":[
                 {
-                    "system":"http://hl7.org/fhir/contractsubtypecodes ",
+                    "system":"http://hl7.org/fhir/v3/ActReason",
                     "code":"TREAT"
                 }
             ]

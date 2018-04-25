@@ -1,70 +1,30 @@
 
 {
     "resourceType":"Contract",
-    "id":"2.16.840.1.113883.3.72.5.9.1.consentId",
+    "id":"consent-as-contract-for-research-1",
+	"meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/consent-as-contract"
+    ],
+	
     "contained":[
-        {
-            "resourceType":"Organization",
-            "id":"researchOrgOID",
-            "identifier":[
-                {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
-                    "value":"NPI of source organization"
-                }
-            ],
-            "name":"Research Organization Name",
-            "address":[
-                {
-                    "line":[
-                        "1 Research Drive"
-                    ],
-                    "city":"Research City",
-                    "state":"MA",
-                    "postalCode":"01221"
-                }
-            ],
-            "contact":[
-                {
-                    "name":{
-                        "family":[
-                            "Researcher Family Name"
-                        ],
-                        "given":[
-                            "Researcher Given Name"
-                        ]
-                    },
-                    "telecom":[
-                        {
-                            "system":"phone",
-                            "value":"408-555-1212",
-                            "use":"work"
-                        },
-                        {
-                            "system":"email",
-                            "value":"contact@sourceorgnization.org",
-                            "use":"work"
-                        }
-                    ]
-                }
-            ]
-        },
         {
             "resourceType":"Basic",
             "id":"item1",
             "identifier":[
                 {
-                    "system":"local system id",
-                    "value":"id for Human Nature study"
+                    "system":"http:://research.org/study/identifier",
+                    "value":"Human.Nature.Psych"
                 }
             ],
-            "code":{
+          "code":{
                 "coding":[
                     {
-                        "system":"urn:oid:2.16.840.1.113883.6.1",
-                        "code":"LOINC_TBD"
+                        "system":"http://hl7.org/fhir/v3/ActCode",
+                        "code":"PSY"
                     }
                 ],
-                "text":"Human Nature Research Study"
+                "text":"Psychiatry Related Data"
             }
         },
         {
@@ -72,7 +32,7 @@
             "id":"patientId",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.1",
+                    "system":"http://hl7.org/fhir/sid/us-ssn",
                     "value":"123-45-6789"
                 },
                 {
@@ -126,7 +86,7 @@
             "id":"researchOrgOID",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI of source organization"
                 }
             ],
@@ -190,30 +150,11 @@
             ]
         },
         {
-            "resourceType":"Basic",
-            "id":"item1",
-            "identifier":[
-                {
-                    "system":"local system id",
-                    "value":"id for Human Nature study"
-                }
-            ],
-            "code":{
-                "coding":[
-                    {
-                        "system":"urn:oid:2.16.840.1.113883.6.1",
-                        "code":"LOINC_TBD"
-                    }
-                ],
-                "text":"Human Nature Research Study"
-            }
-        },
-        {
             "resourceType":"Practitioner",
             "id":"recipientResearcherId",
             "identifier":[
                 {
-                    "system":"urn:oid:2.16.840.1.113883.4.6",
+                    "system":"http://hl7.org/fhir/sid/us-npi",
                     "value":"NPI of recipient provider"
                 }
             ],
@@ -283,7 +224,7 @@
         {
             "coding":[
                 {
-                    "system":"http://hl7.org/fhir/contractsubtypecodes",
+                    "system":"http://hl7.org/fhir/v3/ActReason",
                     "code":"HRESCH"
                 }
             ],
